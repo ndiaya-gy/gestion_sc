@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/gestion_sc_dev
+    username: root
+    password: 
+  jpa:
+    hibernate:
+      ddl-auto: create
+
+isep:
+  dbe:
+    nbreApprenant: 10
+  taux:
+    fille: 0.65
+    etranger: 0.01
+

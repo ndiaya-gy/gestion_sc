@@ -1,0 +1,7 @@
+spring:
+  datasource:
+     driver-class-name: com.postgresql.Driver
+  jpa:
+     dialact-platform: org.hibernate.dialect.PostgreSQLDialect
+
+

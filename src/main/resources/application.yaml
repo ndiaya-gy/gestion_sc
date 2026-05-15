@@ -1,0 +1,33 @@
+isepat:
+  administration:
+    directeur:
+      prenom: Ndiaya
+      nom: Gaye
+      contact:
+        email: mamendiayag@gmail.com
+        tel: 78 150 55 05
+        adresse: mariste
+
+spring:
+  application:
+    name: GestionScolaire
+
+  profiles:
+    active: mysql, dev
+
+  datasource:
+    url: ${DBE_DATABASE_URL}
+    username: ${DBE_USER:root}
+    password: ${DBE_PWD:}
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+
+logging:
+  level:
+    root: warn
+    sql: warn
+    web: warn
+    sn:
+      edu: trace

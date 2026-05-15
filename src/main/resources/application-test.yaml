@@ -1,0 +1,31 @@
+isepat:
+ administration:
+   directeur:
+     prenom: Ndiaya
+     nom: Gaye
+     contact: 
+       email: mamendiayag@gmail.com
+       tel: 78 150 55 05
+       adresse: mariste
+
+spring:
+  application:
+    name: GestionScolaire
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/${DBE_DATABASE:gestion_sc}
+    username: ${DBE_USER:root}
+    password: ${DBE_USER:}
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+logging:
+ level:
+  root: warn
+  sql: warn
+  web: warn
+  sn: 
+    edu: trace
+
