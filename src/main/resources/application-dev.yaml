@@ -13,4 +13,6 @@ isep:
   taux:
     fille: 0.65
     etranger: 0.01
-
+logging:
+  level:
+     sn.edu.isepat.tic: trace

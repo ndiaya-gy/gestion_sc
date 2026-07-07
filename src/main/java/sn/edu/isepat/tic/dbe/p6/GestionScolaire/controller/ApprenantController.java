@@ -4,6 +4,7 @@ import java.util.List;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -87,6 +88,11 @@ public class ApprenantController {
          Apprenante result=apprenantService.findById(id);
             return ResponseEntity.ok(result);
        
+    }
+    @PostMapping
+    public ResponseEntity<?> createApprenant(Apprenante apprenant){
+        log.info("controller  apprenant: create"+apprenant.getPrenom());
+        return ResponseEntity.ok().build();
     }
 }
 

@@ -1,9 +1,10 @@
-package sn.edu.isepat.tic.dbe.p6.GestionScolaire.dto; 
+package sn.edu.isepat.tic.dbe.p6.GestionScolaire.controller; 
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
+import sn.edu.isepat.tic.dbe.p6.GestionScolaire.dto.ErrorResponse;
 import sn.edu.isepat.tic.dbe.p6.GestionScolaire.exception.ApiException;
 
 @ControllerAdvice
