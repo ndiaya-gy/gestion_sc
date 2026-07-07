@@ -1,8 +1,6 @@
 package sn.edu.isepat.tic.dbe.p6.GestionScolaire.filters;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.net.Authenticator.RequestorType;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 
@@ -18,7 +16,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import sn.edu.isepat.tic.dbe.p6.GestionScolaire.entities.RequestLogin;
 import sn.edu.isepat.tic.dbe.p6.GestionScolaire.repository.RequestLoginRepository;
-@Order(30)
+@Order(40)
 @Slf4j
 @Component 
 @RequiredArgsConstructor 
@@ -39,6 +37,8 @@ public class AuditFilter extends OncePerRequestFilter {
             //response.sendError(HttpServletResponse.SC_SERVICE_UNAVAILABLE);
             return;
         }*/
+       // Début aller
+       log.warn("Début aller AuditFilter");
        String ip = request.getRemoteAddr();
        String url = request.getRequestURI();
        String method = request.getMethod();
@@ -53,10 +53,17 @@ public class AuditFilter extends OncePerRequestFilter {
            .queryString(query)
            .build();
            requestLoginRepository.save(requestLogin);
+            // Fin aller
+            log.warn("Fin aller AuditFilter");
            filterChain.doFilter(request, response);   
+
+           // Début retour
+           log.warn("Début retour AuditFilter");
            long duration = ChronoUnit.MILLIS.between(debut, LocalDateTime.now());
            requestLogin.setDuree(duration);
            requestLogin.setStatus(response.getStatus());
            requestLoginRepository.save(requestLogin); 
+           // Fin retour
+           log.warn("Fin retour AuditFilter");
     }
 }
